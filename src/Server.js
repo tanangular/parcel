@@ -32,7 +32,7 @@ function middleware(bundler) {
     function sendIndex() {
       // If the main asset is an HTML file, serve it
       if (bundler.mainAsset.type === 'html') {
-        req.url = `/${bundler.mainAsset.generateBundleName(true)}`;
+        req.url = `/${bundler.mainAsset.generateBundleName()}`;
         serve(req, res, send404);
       } else {
         send404();
